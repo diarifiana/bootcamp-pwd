@@ -104,4 +104,3 @@ console.log(bedaHari);
 get.fullMonth
 get.fullYear
 */
-

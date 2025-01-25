@@ -109,14 +109,14 @@ console.log("test" > "test");
 
 // Math
 // Math Ceil : membulatkan angka ke atas
-console.log(Math.ceil(4,5));
+console.log(Math.ceil(4.5));
 
 // Math Floor : membulatkan angka ke bawah
-console.log(Math.floor(4,3));
+console.log(Math.floor(4.3));
 
 // Math Round : membulatkan angka ke bilangan bulat terdekat
-console.log(Math.round(4,7));
-console.log(Math.round(5,8));
+console.log(Math.round(4.7));
+console.log(Math.round(5.8));
 
 // Math Max : mengembalikan angka terbesar dari sekumpulan angka
 console.log(Math.max(1, 2, 3));
@@ -129,10 +129,3 @@ console.log(Math.abs(-10));
 
 // Math Random : menghasilkan angka acak antara 0 dan 1
 console.log(Math.random());
-
-
-
-
-
-
-

@@ -1,20 +1,13 @@
-/* IF Statement
-Syntax:
-if(condition){
-    code block
-}
-*/
+// IF Statement
+// Syntax: if(condition){ code block }
 
 const age: number = 20;
-
 if (age >= 17) {
     console.log("Anda bisa buat KTP");  
 }
 
 // Else Statement
-
 const age1: number = 10;
-
 if (age1 >= 17) {
     console.log("Anda bisa buat KTP");  
 } else {
@@ -22,7 +15,6 @@ if (age1 >= 17) {
 }
 
 // Else If Statement
-
 const grade: string = "A"
 
 if (grade === "A") {
@@ -36,9 +28,7 @@ if (grade === "A") {
 }
 
 // Switch Case
-
 const hari: string = "senin";
-
 switch(hari) {
     case "senin":
         console.log("Hari Senin");
@@ -57,7 +47,6 @@ switch(hari) {
 // Opt + Arrow (switching between lines)
 
 // Logical Operator (&& - and, || - or, ! - not)
-
 
 // && (and) : harus keduanya bernilai true 
 const umur: number = 19;
@@ -97,7 +86,6 @@ console.log(isRaining);
 
 // Ternary Operation - Shortcut untuk if else condition (only with one condition)
 // syntax: condition ? true : false
-
 const str: string = "javascript";
 
 // using IF
@@ -147,16 +135,13 @@ for(let i = 0; i < 5; i++) {
 
 // While loop : looping while the condition is true
 // Used when you dont know how many times you should do the process
-
 let i: number = 5;
-
 while (i < 10) {
     console.log("Hello World");
     i++;
 }
 
 // Do While : do a situation first, then check condition
-
 let count: number = 1;
 
 do {
@@ -167,9 +152,7 @@ do {
 // Game suit and shooting (using while loop)
 
 // Break : untuk menghentikan loop (bisa juga diganti dengan return)
-
 let sum: number = 0;
-
 while(true) {
     console.log("Sum: " + sum);  
     if(sum >=5) {
@@ -180,11 +163,9 @@ sum++; // increment diletakkan di akhir (readable and total sum is correct)
 
 
 // Continue : melakukan skip pada looping
-
 for (let i = 0; i < 5; i++) {
     if (i === 2 || i === 3) // to skip more than 1 use or ||
         continue;
 
     console.log(i);
 }
-
