@@ -337,3 +337,4 @@ console.log(result5);
 const fruits4: string[] = ["Mango", "Apple", "Banana", "Orange", "Lemon"];
 console.log(fruits4.includes("Apple"));
 console.log(fruits4.includes("B"));
+

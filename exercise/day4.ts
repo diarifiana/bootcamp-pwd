@@ -8,9 +8,26 @@ let triangle: string = "";
 
 // Make a triangle with the same length as inputNum
 for (let i = 1; i <= inputNum; i++) {
-    triangle += i;
+    triangle += `${i} `;
     console.log(triangle);
 }
+
+// Resources: https://jsstarpattern.onrender.com
+// Suggestion / Correction
+function segitiga(height: number) {
+    for(let ii = 1; ii <= height; ii++) {
+        let row: string = "";
+
+        for(let jj = 1; jj <= ii; jj++) {
+            row += jj + " "
+        }
+        
+        console.log(row);
+        
+    }
+}
+
+segitiga(5);
 
 /* Create a function that can create a triangle pattern according to the height we provide like the following :
 01
@@ -38,34 +55,25 @@ console.log("============== TRIANGLE EXERCISE ===============");
 displayTriangle(5);
 
 console.log("============== TRIANGLE EXERCISE ===============");
-// Define inputNumber
-// const inputNumber: number = 10;
-// let triangle1: string = "";
-// let triangle2: string = "";
-// let triangle3: string = "";
-// let triangle4: string = "";
 
-// Display 0 - 10 in a triangle
-// for (let j = 1; j <= 1; j++) {
-//     triangle1 += `${((j < 10) ? ` 0${j}` : ` ${j}`)}`
-// }
+// Suggestion
+function segitiga2(height: number) {
+    let currentNumber: number = 1;
 
-// for (let j = 2; j <= 3; j++) {
-//     triangle2 += `${((j < 10) ? ` 0${j}` : ` ${j}`)}`
-// }
+    for(let ii = 1; ii <= height; ii++) {
+        let row: string = "";
 
-// for (let j = 4; j <= 6; j++) {
-//     triangle3 += `${((j < 10) ? ` 0${j}` : ` ${j}`)}`
-// }
+        for(let jj = 1; jj <= ii; jj++) {
+            row += (currentNumber < 10 ? "0" : " ") + currentNumber + " ";
+            currentNumber++
+        }
 
-// for (let j = 7; j <= 10; j++) {
-//     triangle4 += `${((j < 10) ? ` 0${j}` : ` ${j}`)}`
-// }
+        
+        console.log(row);
+    }
+}
 
-// console.log(triangle1);
-// console.log(triangle2);
-// console.log(triangle3);
-// console.log(triangle4);
+segitiga2(5);
 
 /* Create a function that can loop the number of times according to the input we provide, and will replace multiples of 3 with "Fizz", multiples of 5 with "Buzz", multiples of 3 and 5 with "FizzBuzz".
 ● Parameters : n → total looping
@@ -91,6 +99,28 @@ console.log(k);
 }
 
 console.log(result);
+
+// Suggestion
+function fizzBuzz(n: number) {
+    let message: string = "";
+
+    for(let i = 1; i <= n; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            message += "FizzBuzz ";
+        } else if (i % 3 === 0) {
+            message += "Fizz ";
+        } else if (i % 5 === 0) {
+            message += "Buzz ";
+        } else {
+            message += i + " ";
+        }
+    }
+
+    console.log(message);
+    
+}
+
+fizzBuzz(15);
 
 /*
 Create a function to calculate Body Mass Index (BMI)
@@ -127,6 +157,28 @@ function CalculationBMI() {
 CalculationBMI(); // Call a function
 console.log(CalculationBMI()) // Display result
 
+// Suggestion
+function bmi(weight: number, height: number) {
+    const result = weight / (height * height);
+
+    if (result < 18.5) {
+        return "less weight";
+    } else if (result >= 18.5 && result < 24.9) {
+        return "ideal";
+    } else if (result >= 25.0 && result < 29.9) {
+        return "overweight";
+    } else if (result >= 30.0 && result < 39.9) {
+        return "very overweight";
+    } else {
+        return "obesity";
+    }
+}
+
+const weight1: number = 70; // in kg
+const height1: number = 1.75 // in meters
+
+console.log(bmi(weight, height));
+
 /* Write a function to remove all odd numbers in an array and return a new array that contains even numbers only
 ○ Example : [1,2,3,4,5,6,7,8,9,10] → [2,4,6,8,10] */
 
@@ -142,6 +194,29 @@ for (let l = 1; l <= firstArray.length; l++) {
     }
 }
 
+// Suggestion (with Filter)
+function removeOddNum(numbers: number[]) {
+    const result1 = numbers.filter((number) => number % 2 === 0);
+    return result1;
+}
+
+console.log(removeOddNum([1,2,3,4,5,6,7,8,9,10]));
+
+// Suggestion (for loop)
+function removeOddNum1(numbers: number[]) {
+    const result2: number[] = [];
+
+    for(let i = 0; i < numbers.length; i++) {
+        if(numbers[i] % 2 === 0) {
+            result2.push(numbers[i]);
+        }
+    }
+
+    return result;
+}
+
+console.log(removeOddNum1([1,2,3,4,5,6,7,8,9,10]));
+
 /* Write a function to split a string and convert it into an array of words 
 Example : “Hello World” → [“Hello”, “World”] */
 
@@ -155,3 +230,26 @@ function SplitString () {
 
 SplitString(); // Call function
 console.log(SplitString());
+
+// Suggestion - using for loop
+function SplitString2 () {
+    const kata: string[] = [];
+    let tempStr: string = "";
+
+    for(let m = 0; m < str.length; m++) {
+        if (str[m] === " ") {
+            kata.push(tempStr);
+            tempStr = "";
+            continue;
+        }
+
+        tempStr += str[m];
+    }
+
+    kata.push(tempStr);
+
+    console.log(kata);
+}
+
+SplitString2(); // Call function
+console.log(SplitString2());
