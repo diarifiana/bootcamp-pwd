@@ -226,3 +226,114 @@ console.log(words2.concat(words3).concat(words4));
 // Spread operator --> copy seluruh index array dan paste di array target
 const mergeArr = [...words2, ...words3, ...words4];
 console.log(mergeArr);
+
+// Splice -> untuk menghapus, mengganti, atau menambahkan value pada sebuah array
+// syntax: splice(startIndex, brpYgMauDiDelete, item)
+
+const months: string[] =  ["jan", "march", "april", "june"];
+months.splice(1, 0, "feb");
+console.log(months);
+
+months.splice(4, 1);
+console.log(months);
+
+months.splice(3, 1, "may");
+console.log(months);
+
+// SLICE -> mereturn array baru berdasarkan start index dan end index
+// syntax: slice(startIndex, endIndex)
+
+const fruitss: string[] = ["Apple", "Banana", "Orange", "Mango", "Lemon"];
+console.log(fruitss.slice(1,4));
+console.log(fruitss.slice(-4, -1));
+
+// INDEXOF -> mencari index dari value yang kita search, kalau tidak ditemukan 
+
+const fruits1: string[] = ["Apple", "Banana", "Orange", "Mango", "Lemon"];
+console.log(fruits1.indexOf("Lemon"));
+console.log(fruits1.indexOf("A")); // will show result -1 because the argument is not found
+
+// SORT -> mengurutkan isi array berupa string atau number
+// String
+const fruits2: string[] = ["Mango", "Apple", "Banana", "Orange", "Lemon"];
+fruits2.sort()
+console.log(fruits2);
+
+// Number
+const points: number[] = [10,3,2,1,5,6];
+points.sort()
+console.log(points); // only sorting from the first character
+
+// Number using compare function
+const points1: number[] = [10,3,2,1,5,6];
+points1.sort((a,b) => a - b); // ascending
+console.log(points1);
+points1.sort((a,b) => b - a); // descending
+console.log(points1);
+
+// REVERSE -> membalikkan urutan element dalam array
+const points2: number[] = [10,3,2,1,5,6];
+points2.reverse();
+console.log(points2);
+
+// MAP -> melakukan looping pada array dan akan mereturn array baru (used in frontend)
+// For loop, while loop, etc digunakan untuk backend
+const points3: number[] = [1,2,3,4,5,6];
+
+const resultt = points3.map((point, index) => { // point (parameter1, singular from name of array)
+    console.log(index);
+    
+    // you can put logic here
+    return point * 2;
+});
+
+console.log(resultt);
+
+const result1 = points3.map((point, index) => point * 2)
+console.log(result1);
+
+// FOREACH -> melakukan looping pada array tapi tidak mereturn array baru
+const fruits3: string[] = ["Mango", "Apple", "Banana", "Orange", "Lemon"];
+
+const result2 = fruits3.forEach((fruit, index) => {
+    console.log(fruit);
+    console.log(index);
+    
+    return fruit;
+})
+
+console.log(result2);
+
+// FILTER -> melakukan looping pada array dan menghasilkan array baru berdasarkan kondisi pada return function
+const ages: number[] = [32, 15, 40, 22, 12];
+const result3 = ages.filter((age) => {
+    return age > 17; // input condition for filter
+})
+console.log(result3);
+
+// FIND -> mencari value yang pertama kali ditemukan dalam array
+const ages1: number[] = [32, 15, 40, 22, 12];
+const display = ages1.find((age) => {
+    return age > 14;
+});
+
+const display1 = ages1.find((age) => age > 32);
+console.log(display1);
+
+// FINDINDEX -> mirip seperti find tapi yang dihasilkan adalah indexnya
+const ages2: number[] = [32, 15, 40, 22, 12];
+const result4 = ages2.findIndex((age) => {
+    return age > 32;
+})
+console.log(result4);
+
+// REDUCE -> digunakan untuk melakukan operasi aritmatika pada tiap isi array
+const numbers: number[] = [200, 50, 100, 50];
+
+const result5 = numbers.reduce((a, b) => a + b);
+console.log(result5);
+
+// INCLUDES -> mengecek value pada array apakah ada atau tidak, hasil return boolean
+const fruits4: string[] = ["Mango", "Apple", "Banana", "Orange", "Lemon"];
+console.log(fruits4.includes("Apple"));
+console.log(fruits4.includes("B"));
