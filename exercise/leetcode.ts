@@ -239,4 +239,3 @@ function findMaxConsecutiveOnes(nums: number[]): number {
 };
 
 console.log(findMaxConsecutiveOnes([1,1,0,1,1,1]));
-
